@@ -7,6 +7,8 @@ import SignUp from './Auth/SignUp';
 import Navbar from './components/Navbar.js';
 import AuthcontextProvider from './context/AuthContext';
 import Home from './components/Home';
+import Profile from './components/Profile/Profile';
+import Addproducts from './components/Profile/AddProducts';
 
 
 const Index = () => {
@@ -18,6 +20,8 @@ const Index = () => {
                <Routes>
                    <Route path='/signUp' element={<SignUp/>} />
                    <Route path='/' element={<Home/>} />
+                   <Route path='/profile' element={<Profile/>} />
+                   <Route path='/add' element={<Addproducts/>} />
                </Routes>
                </AuthcontextProvider>
         </Router>

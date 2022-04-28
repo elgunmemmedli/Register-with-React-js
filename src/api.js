@@ -9,3 +9,17 @@ export const registerUser = async (yeniUser)=>{
 }
 
 
+export const RandomImage = async()=>{
+    let data = await axios.get('https://source.unsplash.com/random/900×700/?coat');
+    return data.request.responseURL;
+}
+
+
+export const AddproductsDb = async (yeniMehsul)=>{
+    let data = await axios.post( 'https:/reactproyekt-default-rtdb.firebaseio.com/products.json', 
+    yeniMehsul
+    );
+    return data;
+}
+
+

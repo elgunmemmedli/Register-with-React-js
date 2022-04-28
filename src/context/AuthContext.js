@@ -1,5 +1,6 @@
 import React, { createContext, useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { getProductsDb } from '../api';
 
 
 export const Authcontext = createContext();
@@ -10,6 +11,7 @@ const AuthcontextProvider = ({ children }) => {
 
     const [user, setUser] = useState('');
     const [isLogin, setIsLogin] = useState(false);
+
 
 
 useEffect( ()=>{
@@ -23,20 +25,18 @@ useEffect( ()=>{
 }, []);
 
 
-
     // login oldu adam
     const login = (data) => {
         setUser(data.idToken);
         setIsLogin(true);
         localStorage.setItem('token', data.idToken);
         navigate('/');
-
     }
 
    const values = {
         user, 
         isLogin, 
-        login
+        login,
     }
 
     return (
